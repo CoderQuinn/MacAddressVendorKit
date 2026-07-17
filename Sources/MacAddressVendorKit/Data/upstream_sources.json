@@ -1,0 +1,41 @@
+{
+  "authoritativeLandingPage": "https://standards.ieee.org/products-programs/regauth/",
+  "entryCount": 57901,
+  "generatedAt": "2026-07-17",
+  "redistributionState": "private_pending_permission_review",
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "filename": "oui.csv",
+      "prefixBits": 24,
+      "registry": "MA-L",
+      "rowCount": 39752,
+      "sha256": "482e4620f436ff3b4510ac78372540d718c0bf1dfda66260b67ce12fad051c4f",
+      "url": "https://standards-oui.ieee.org/oui/oui.csv"
+    },
+    {
+      "filename": "mam.csv",
+      "prefixBits": 28,
+      "registry": "MA-M",
+      "rowCount": 6484,
+      "sha256": "e4b607e3517fbf462cea2360ec045696b7002a33f2258200a38ef120eeeb4c98",
+      "url": "https://standards-oui.ieee.org/oui28/mam.csv"
+    },
+    {
+      "filename": "oui36.csv",
+      "prefixBits": 36,
+      "registry": "MA-S",
+      "rowCount": 7090,
+      "sha256": "a4caaef5b27f42236ede2bea4dd99aae2c99343c19c580ac5f039688775ce78b",
+      "url": "https://standards-oui.ieee.org/oui36/oui36.csv"
+    },
+    {
+      "filename": "iab.csv",
+      "prefixBits": 36,
+      "registry": "IAB",
+      "rowCount": 4575,
+      "sha256": "20f58c75be7809404515ba9d399e112e97f2880db9c9e89bbc137db0abce76dc",
+      "url": "https://standards-oui.ieee.org/iab/iab.csv"
+    }
+  ]
+}

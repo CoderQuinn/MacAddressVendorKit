@@ -1,0 +1,54 @@
+name: Weekly data release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "43 3 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate latest offline database
+        run: python3 Tools/generate_database.py
+
+      - name: Test generator and Swift package
+        run: |
+          python3 -m unittest discover Tools/tests
+          swift test
+          sqlite3 Sources/MacAddressVendorKit/Data/mac_address_vendors.sqlite3 "PRAGMA integrity_check;"
+
+      - name: Commit changed snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            Sources/MacAddressVendorKit/Data/mac_address_vendors.sqlite3 \
+            Sources/MacAddressVendorKit/Data/upstream_sources.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: refresh IEEE registry snapshot"
+            git push origin HEAD:main
+          fi
+
+      - name: Publish weekly private data release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="data-$(date -u +%Y.%m.%d)"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            exit 0
+          fi
+          git tag "$tag"
+          git push origin "$tag"
+          gh release create "$tag" \
+            Sources/MacAddressVendorKit/Data/mac_address_vendors.sqlite3 \
+            Sources/MacAddressVendorKit/Data/upstream_sources.json \
+            --title "$tag" \
+            --notes "Private weekly offline snapshot generated from IEEE Registration Authority public listings."
