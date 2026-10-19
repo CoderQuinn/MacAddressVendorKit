@@ -1,7 +1,7 @@
 {
   "authoritativeLandingPage": "https://standards.ieee.org/products-programs/regauth/",
-  "entryCount": 58748,
-  "generatedAt": "2026-10-12",
+  "entryCount": 58798,
+  "generatedAt": "2026-10-19",
   "redistributionState": "private_pending_permission_review",
   "schemaVersion": 1,
   "sources": [
@@ -9,24 +9,24 @@
       "filename": "oui.csv",
       "prefixBits": 24,
       "registry": "MA-L",
-      "rowCount": 40319,
-      "sha256": "d2e8eb02bc98337a44e246b11e1a63467ac37dd51bd6490bbdde0ad3a8f7b559",
+      "rowCount": 40347,
+      "sha256": "bdd0377ed4a4b3fa5e1b7445a29a64c39d5179d40dd8a50038789abb2aff5c8d",
       "url": "https://standards-oui.ieee.org/oui/oui.csv"
     },
     {
       "filename": "mam.csv",
       "prefixBits": 28,
       "registry": "MA-M",
-      "rowCount": 6628,
-      "sha256": "f259ca7090319f23ccef7af1f6698aa983e5924b2e5536b297f99e3725c91a1c",
+      "rowCount": 6641,
+      "sha256": "9590c0564a7ce2476f1aa38c5161fe017b835691529ae37d5adc580b27ccb97e",
       "url": "https://standards-oui.ieee.org/oui28/mam.csv"
     },
     {
       "filename": "oui36.csv",
       "prefixBits": 36,
       "registry": "MA-S",
-      "rowCount": 7226,
-      "sha256": "db7b936eb75cc6695623956dd9b9baebaf422822aeea3c57c2db05b3ff6d9079",
+      "rowCount": 7235,
+      "sha256": "53c4bf31090c4963e46645f1a24af1205601d36883039a7e1d6531c46359bb6c",
       "url": "https://standards-oui.ieee.org/oui36/oui36.csv"
     },
     {
